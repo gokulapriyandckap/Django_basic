@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gokul Peace</h1>
+
+    <table style="text-align:center">
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Eligible</th>
+        </tr>
+        {% for user in users%}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+       <td>{% if user.age >= 18 %} Eligible {% else %} Not Eligible {% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
